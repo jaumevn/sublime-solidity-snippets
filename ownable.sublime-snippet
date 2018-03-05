@@ -1,0 +1,63 @@
+<snippet>
+	<content><![CDATA[
+
+contract ${1:Ownable} {
+	address public owner;
+	address public admin;
+	address public ops;
+
+	event OwnershipTransferred(address previousOwner, address newOwner);
+	event AdminUpdated(address previousAdmin, address newOwner);
+	event OpsUpdated(address previousOps, address newOwner);
+
+	function ${1:Ownable}() {
+		owner = msg.sender;
+	}
+
+	function transferOwnership(address newOwner) external onlyOwner returns (bool) {
+    	require(newOwner != address(0));
+    	OwnershipTransferred(owner, newOwner);
+    	owner = newOwner;
+    	return true;
+  	}
+
+  	function setAdmin(address newAdmin) external onlyOwner returns (bool) {
+        require(newAdmin != address(0));
+        AdminUpdated(admin, newAdmin);
+        admin = newAdmin;
+        return true;
+    }
+
+    function setOps(address newOps) external onlyOwner returns (bool) {
+        require(newOps != address(0));
+        OpsUpdated(ops, newOps);
+        ops = newOps;
+        return true;
+    }
+
+	modifier onlyOwner() {
+		require(msg.sender == owner);
+		_;
+	}
+
+    modifier onlyAdmin() {
+        require(msg.sender == adminAddress);
+        _;
+    }
+
+    modifier onlyOps() {
+        require(msg.sender == opsAddress);
+        _;
+    }
+
+    modifier onlyAdminOrOps() {
+        address _address = msg.sender;
+        require(_address == opsAddress || _address == adminAddress);
+        _;
+    }
+}
+
+]]></content>
+	<tabTrigger>acl</tabTrigger>
+	<scope>source.solidity</scope>
+</snippet>

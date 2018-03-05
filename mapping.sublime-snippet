@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+mapping (${1:address} => ${2:uint}) ${3:public} ${4:myMapping};
+]]></content>
+	<tabTrigger>map</tabTrigger>
+	<scope>source.solidity</scope>
+</snippet>

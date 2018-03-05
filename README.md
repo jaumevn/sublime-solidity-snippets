@@ -1,1 +1,1 @@
-# sublime-solidity-snippets
+# Solidity Snippets for Sublime Text

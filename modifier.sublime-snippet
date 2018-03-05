@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+
+modifier ${1:name}(${2:uint _time}) { 
+	require(${3:now >= _time});
+	_; 
+}	
+	
+]]></content>
+	<tabTrigger>mod</tabTrigger>
+	<scope>source.solidity</scope>
+</snippet>

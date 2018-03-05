@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+event ${1:MyEvent}(${2});
+]]></content>
+	<tabTrigger>event</tabTrigger>
+	<scope>source.solidity</scope>
+</snippet>
