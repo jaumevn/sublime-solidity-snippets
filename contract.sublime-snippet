@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+contract ${1:MyContract} is ${2:A} {
+	function ${1}(${3}) {
+
+	}
+}
+]]></content>
+	<tabTrigger>contract</tabTrigger>
+	<scope>source.solidity</scope>
+</snippet>
